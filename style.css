@@ -14,7 +14,7 @@ html{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(images/ClassicP3.jpeg);
+    background-image: url(ClassicP3.jpeg);
     background-size: 70% auto;
     background-position: center;
 }
