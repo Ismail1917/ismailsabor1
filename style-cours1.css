@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #f2f2f2;
+}
+#header{
+    background-color: #074f57;
+    color:  #fff;
+    background-image: url(images/Monet5.jpg);
+    background-size: 75% auto;
+    background-position: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.container-1{
+    position: fixed;
+    padding: 10px 10%;
+    background-color: #f2f2f2; /* Light gray background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #000080; /* Navy blue text */
+}
+nav ul li{
+    margin-top: 10px;
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
