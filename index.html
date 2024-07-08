@@ -120,9 +120,13 @@
             </div>
 
             <div class="contact-right">
-                <form name="submit-to-google-sheet">
+                <form action="https://formspree.io/f/mblrjbar"
+                method="POST"
+                >
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
+                    <input type="school" name="School" placeholder="Your School" required>
+                    <input type="class" name="Class" placeholder="Your Class" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
