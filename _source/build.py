@@ -102,6 +102,17 @@ CHAPITRES = [
      "Matrice d’une famille de vecteurs et d’une application linéaire dans des bases données, rang, noyau et image d’une matrice, lien avec les systèmes linéaires, changements de base et matrices semblables."),
 ]
 
+# Devoirs surveillés : (code, pdf, année scolaire, date, durée, chapitres, description)
+DS = [
+    ("DS01", "devoirs/DS01_2026-2027.pdf", "2026-2027", datetime.date(2026, 9, 18), "2 h", [0, 2],
+     "Étude complète d’une fonction, équations trigonométriques et suite d’intégrales définie par récurrence."),
+    ("DS02", "devoirs/DS02_2026-2027.pdf", "2026-2027", datetime.date(2026, 10, 2), "2 h", [1, 2],
+     "Caractérisation complexe des triangles équilatéraux, puis un problème ramené à l’étude d’une fonction réelle."),
+    ("DS03", "devoirs/DS03_2026-2027.pdf", "2026-2027", datetime.date(2026, 10, 30), "2 h", [3],
+     "La fonction de Gudermann, puis les encadrements de Shafer–Fink pour arcsin et arctan."),
+]
+
+# Devoirs libres : (code, pdf, titre, thème, description)
 DEVOIRS = [
     ("DL01", "devoirs/DL01.pdf", "Devoir libre n°1", "Rappels calculatoires",
      "Cinq exercices indépendants pour consolider les techniques de calcul."),
@@ -326,28 +337,50 @@ def build_cours():
 # Devoirs
 # --------------------------------------------------------------------------
 def build_devoirs():
+    titres = {n: t for n, _, t, *_ in CHAPITRES}
+    sections = []
+    years = sorted({y for _, _, y, *_ in DS}, reverse=True)
+    for y in years:
+        cards = []
+        for code, pdf, yy, date, duree, chaps, desc in sorted((d for d in DS if d[2] == y), reverse=True):
+            p, _ = pdf_info(pdf)
+            tags = "".join(f'<span class="tag">{esc(titres[c])}</span>' for c in sorted(chaps))
+            cards.append(f"""
+    <article class="card">
+      <div class="top"><h3>DS {int(code[2:])}</h3><span class="source">{fdate(date)} · {duree}</span></div>
+      <p>{esc(desc)}</p>
+      <div class="tags">{tags}</div>
+      <div class="foot"><small>{p} pages</small>
+        <a class="btn primary small" href="{pdf}" data-goatcounter-click="ds-{y}-{code.lower()}" data-goatcounter-title="DS {int(code[2:])} ({y})">{ICON_DL}Télécharger</a></div>
+    </article>""")
+        sections.append(f"""
+  <h2 class="section-title">Devoirs surveillés {y}</h2>
+  <div class="cards">{"".join(cards)}
+  </div>""")
     cards = []
     for code, pdf, titre, theme, desc in DEVOIRS:
         p, d = pdf_info(pdf)
         cards.append(f"""
     <article class="card">
-      <div class="top"><h3>{code[:2]} {int(code[2:])}</h3><span class="source">{esc(theme)}</span></div>
+      <div class="top"><h3>DL {int(code[2:])}</h3><span class="source">{esc(theme)}</span></div>
       <p>{esc(desc)}</p>
-      <div class="foot"><small>{p} pages · {fdate(d)}</small>
+      <div class="foot"><small>{p} pages</small>
         <a class="btn primary small" href="{pdf}" data-goatcounter-click="devoir-{code.lower()}" data-goatcounter-title="{esc(titre)}">{ICON_DL}Télécharger</a></div>
     </article>""")
+    sections.append(f"""
+  <h2 class="section-title">Devoirs libres</h2>
+  <div class="cards">{"".join(cards)}
+  </div>""")
     body = f"""
 <div class="wrap">
   <div class="page-head">
     <div class="eyebrow">1ère année TSI</div>
     <h1>Devoirs</h1>
-    <p class="lead">Les devoirs libres, pour s’entraîner à la maison sur les chapitres déjà traités en classe.</p>
-  </div>
-  <div class="cards">{"".join(cards)}
-  </div>
+    <p class="lead">Les devoirs surveillés de l’année, publiés après chaque épreuve, et des devoirs libres pour s’entraîner à la maison. Le meilleur moyen de se préparer au prochain DS.</p>
+  </div>{"".join(sections)}
 </div>"""
-    write("Devoirs.html", page("Devoirs.html", "Devoirs de mathématiques — 1ère année TSI | Ismail Sabor",
-                               "Devoirs libres de mathématiques pour la première année TSI, à télécharger.",
+    write("Devoirs.html", page("Devoirs.html", "Devoirs surveillés et devoirs libres — 1ère année TSI | Ismail Sabor",
+                               "Devoirs surveillés (DS) et devoirs libres de mathématiques de première année TSI, à télécharger.",
                                body, "Devoirs.html"))
 
 # --------------------------------------------------------------------------
@@ -433,7 +466,7 @@ def build_index():
 <div class="wrap">
   <div class="quick">
     <a href="Cours.html"><div class="eyebrow">Élèves</div><h3>Cours &amp; TD</h3><p>Polycopiés de cours et feuilles d’exercices, chapitre par chapitre.</p><span class="count">{nb_ch} chapitres →</span></a>
-    <a href="Devoirs.html"><div class="eyebrow">Élèves</div><h3>Devoirs</h3><p>Devoirs libres pour s’entraîner à la maison.</p><span class="count">{len(DEVOIRS)} devoirs →</span></a>
+    <a href="Devoirs.html"><div class="eyebrow">Élèves</div><h3>Devoirs</h3><p>Devoirs surveillés de l’année et devoirs libres pour s’entraîner.</p><span class="count">{len(DS) + len(DEVOIRS)} devoirs →</span></a>
     <a href="verslexcellence.html"><div class="eyebrow">Concours</div><h3>Vers l’Excellence</h3><p>Sujets de concours adaptés, classés par difficulté.</p><span class="count">{len(VERS_EXCELLENCE)} sujets →</span></a>
   </div>
 </div>
