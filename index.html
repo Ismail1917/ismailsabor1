@@ -1,25 +1,23 @@
-<!DOCTYPE html> 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Sabor Ismail
-    </title>
+    <title>Ismail Sabor — Professeur de mathématiques, CPGE Lydex Benguerir</title>
+    <meta name="description" content="Ismail Sabor, professeur agrégé de mathématiques aux CPGE Lydex Benguerir : cours, TD et devoirs de mathématiques pour la classe TSI.">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/380d894d84.js" crossorigin="anonymous"></script>
 </head>
-
-<script src="https://kit.fontawesome.com/380d894d84.js" crossorigin="anonymous"></script>
 <body>
 <div id="header">
     <div class="container">
         <nav>
             <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="Cours.html">Cours- TD</a></li>
+                <li><a href="#header">Accueil</a></li>
+                <li><a href="Cours.html">Cours - TD</a></li>
                 <li><a href="Devoirs.html">Devoirs</a></li>
-                <li><a href="verslexcellence.html">Vers L'Excellence</a></li>
+                <li><a href="verslexcellence.html">Vers l'Excellence</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <i class="fas fa-times" onclick="closemenu()"></i>
             </ul>
@@ -28,169 +26,116 @@
         <div class="header-text">
             <h1>Maybe it's not about <span>being</span>,<br>but <span>becoming</span>.</h1>
         </div>
-    </div> 
+    </div>
 </div>
 <!---------------------------about---------------------------------->
 <div id="about">
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="background.jpg"> 
+                <img src="background.jpg" alt="Ismail Sabor">
             </div>
             <div class="about-col-2">
-            <h1  class="sub-title">About Me</h1>
-            </p>
-                Je suis Ismail Sabor, Professeur de mathématiques aux CPGE Lydex Benguerir, Maroc.
-            </p>
-            <div class="tab-titles">
-                <p class="tab-links" onclick="opentab('education')">Education</p>
-                <p class="tab-links" onclick="opentab('experience')">Expérience</p>
-            </div>
-            <div class="tab-contents" id="education">
-                <ul>
-                    <li><br>Baccalauréat Sciences Mathématiques A.</li>
-                    <li><br>Licence en Mathématiques et Applications.</li>
-                    <li><br>Master en Mathématiques pures.</li>
-                    <li><br> Agrégation de Mathématiques.</li>
-                </ul>
-            </div>
-            <div class="tab-contents" id="experience">
-                <ul>
-                    <li><br>1 an de préparation au concours de l'agrégation externe au CRMEF Fès.</li>
-                    <li><br>1 an de préparation au concours de l'agéragation externe à l'UM6P Benguerir.</li>
-                    <li><br>1 an de stage au CPGE Lydex Benguerir.</li>
-                    <li><br> Professeur de Mathématiques aux CPGE Lydex Benguerir.</li>
-                </ul>
-            </div>
-            </div>
-        </div>
-    </div>
-</div>    
-<!---------------------------portfolio---------------------------------->
-<!----<div id="Colles">
-    <div class="container">
-        <h1 class="sub-title">My work</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/work-1.jpg">
-                <div class="layer">
-                    <h3>Social Media App</h3>
-                    <p>To add here</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                <h1 class="sub-title">À propos</h1>
+                <p>Je suis Ismail Sabor, professeur agrégé de mathématiques aux CPGE Lydex Benguerir, Maroc.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab(event, 'education')">Formation</p>
+                    <p class="tab-links" onclick="opentab(event, 'experience')">Expérience</p>
                 </div>
-            </div>
-            <div class="work">
-                <img src="images/work-2.jpg">
-                <div class="layer">
-                    <h3>Music App</h3>
-                    <p>To add here</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                <div class="tab-contents active-tab" id="education">
+                    <ul>
+                        <li><br>Baccalauréat Sciences Mathématiques A.</li>
+                        <li><br>Licence en Mathématiques et Applications.</li>
+                        <li><br>Master en Mathématiques pures.</li>
+                        <li><br>Agrégation de Mathématiques.</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="work">
-                <img src="images/work-3.jpg">
-                <div class="layer">
-                    <h3>Online sHOPPING App</h3>
-                    <p>To add here</p>
-                    <a href="#"><i class="fa-sharp fa-solid fa-up-right-from-square"></i></a>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><br>1 an de préparation au concours de l'agrégation externe au CRMEF Fès.</li>
+                        <li><br>1 an de préparation au concours de l'agrégation externe à l'UM6P Benguerir.</li>
+                        <li><br>1 an de stage aux CPGE Lydex Benguerir.</li>
+                        <li><br>Professeur de mathématiques aux CPGE Lydex Benguerir.</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <a href="#" class="btn">See more</a>
     </div>
 </div>
----->
-
 
 <!---------------contact------------>
 <div id="contact">
     <div class="container">
         <div class="row">
             <div class="contact-left">
-                <h1>Contact Me</h1>
-                <p><i class="fa-sharp fa-solid fa-paper-plane"></i> Isma9l.S1bor@gmail.com</p>
-                <p><i class="fa-solid fa-square-phone"></i> 0123456754</p>
+                <h1>Contact</h1>
+                <p><i class="fa-sharp fa-solid fa-paper-plane"></i> <a href="mailto:isma9l.s1bor@gmail.com">isma9l.s1bor@gmail.com</a></p>
                 <div class="social-icons">
-                <a href="https://www.facebook.com/Isma9lik1"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://twitter.com/SaborIsmail"><i class="fa-brands fa-x-twitter"></i></i></a>
-                <a href="https://www.instagram.com/ismailsabor/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/ismail-sabor-1925b6318/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/Isma9lik1" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/SaborIsmail" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/ismailsabor/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ismail-sabor-1925b6318/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <a href="Resume .pdf" download class="btn btn2">Download CV</a>    
+                <a href="CV-Ismail-Sabor.pdf" download class="btn btn2">Télécharger le CV</a>
             </div>
 
             <div class="contact-right">
-                <form action="https://formspree.io/f/mblrjbar"
-                method="POST"
-                >
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <input type="school" name="School" placeholder="Your School" required>
-                    <input type="class" name="Class" placeholder="Your Class" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
+                <form id="contact-form" action="https://formspree.io/f/mblrjbar" method="POST">
+                    <input type="text" name="Nom" placeholder="Votre nom" required>
+                    <input type="email" name="email" placeholder="Votre e-mail" required>
+                    <input type="text" name="Établissement" placeholder="Votre établissement" required>
+                    <input type="text" name="Classe" placeholder="Votre classe" required>
+                    <textarea name="Message" rows="6" placeholder="Votre message" required></textarea>
+                    <button type="submit" class="btn btn2">Envoyer</button>
                 </form>
                 <span id="msg"></span>
-            </div>        
+            </div>
         </div>
     </div>
     <div class="copyright">
-        <p> copyright made by ismail sabor</p>
+        <p>© <span id="year">2026</span> Ismail Sabor</p>
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
-
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
 
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
+    function opentab(event, tabname){
+        for (var tablink of tablinks) tablink.classList.remove("active-link");
+        for (var tabcontent of tabcontents) tabcontent.classList.remove("active-tab");
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
-    
-</script>
 
-<script>
     var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){ sidemenu.style.right = "0"; }
+    function closemenu(){ sidemenu.style.right = "-200px"; }
 
-    function openmenu(){
-        sidemenu.style.right = "0";
-    }
-    function closemenu(){
-        sidemenu.style.right = "-200px";
-    }
+    document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Envoi du formulaire sans quitter la page
+    var form = document.getElementById("contact-form");
+    var msg = document.getElementById("msg");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        msg.textContent = "Envoi en cours…";
+        fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+        }).then(function (response) {
+            if (response.ok) {
+                msg.textContent = "Message envoyé, merci ! Je vous répondrai rapidement.";
+                form.reset();
+                setTimeout(function () { msg.textContent = ""; }, 6000);
+            } else {
+                msg.textContent = "Erreur lors de l'envoi. Écrivez-moi directement par e-mail.";
+            }
+        }).catch(function () {
+            msg.textContent = "Erreur réseau. Écrivez-moi directement par e-mail.";
+        });
+    });
 </script>
-
 </body>
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxPxMP2HwRnMfIYmCHKGrSvJH4r5YU6-Os9-xJ2kkW97hiPVRQdaLm1nMN63GsmjkvejQ/exec'
-    const form = document.forms['submit-to-google-sheet']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
-<html>
+</html>
