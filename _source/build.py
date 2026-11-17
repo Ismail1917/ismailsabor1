@@ -110,7 +110,12 @@ DS = [
      "Caractérisation complexe des triangles équilatéraux, puis un problème ramené à l’étude d’une fonction réelle."),
     ("DS03", "devoirs/DS03_2026-2027.pdf", "2026-2027", datetime.date(2026, 10, 30), "2 h", [3],
      "La fonction de Gudermann, puis les encadrements de Shafer–Fink pour arcsin et arctan."),
+    ("CB01", "devoirs/CB01_2025-2026.pdf", "2025-2026", datetime.date(2025, 12, 24), "3 h", [5, 6, 7],
+     "Somme des carrés par quatre méthodes, exponentielle amortie et problème de Cauchy, équation du second ordre, intégrales de Wallis et de Gauss."),
+    ("CB02", "devoirs/CB02_2025-2026.pdf", "2025-2026", datetime.date(2026, 5, 19), "4 h", [17, 18, 19],
+     "Limites par développements limités, puissances et exponentielle d’une matrice, interpolation de Lagrange."),
 ]
+KIND = {"DS": "DS", "CB": "Concours blanc"}
 
 # Devoirs libres : (code, pdf, titre, thème, description)
 DEVOIRS = [
@@ -342,19 +347,20 @@ def build_devoirs():
     years = sorted({y for _, _, y, *_ in DS}, reverse=True)
     for y in years:
         cards = []
-        for code, pdf, yy, date, duree, chaps, desc in sorted((d for d in DS if d[2] == y), reverse=True):
+        for code, pdf, yy, date, duree, chaps, desc in sorted((d for d in DS if d[2] == y), key=lambda d: d[3], reverse=True):
+            name = f"{KIND[code[:2]]} {int(code[2:])}"
             p, _ = pdf_info(pdf)
             tags = "".join(f'<span class="tag">{esc(titres[c])}</span>' for c in sorted(chaps))
             cards.append(f"""
     <article class="card">
-      <div class="top"><h3>DS {int(code[2:])}</h3><span class="source">{fdate(date)} · {duree}</span></div>
+      <div class="top"><h3>{name}</h3><span class="source">{fdate(date)} · {duree}</span></div>
       <p>{esc(desc)}</p>
       <div class="tags">{tags}</div>
       <div class="foot"><small>{p} pages</small>
-        <a class="btn primary small" href="{pdf}" data-goatcounter-click="ds-{y}-{code.lower()}" data-goatcounter-title="DS {int(code[2:])} ({y})">{ICON_DL}Télécharger</a></div>
+        <a class="btn primary small" href="{pdf}" data-goatcounter-click="{code[:2].lower()}-{y}-{code.lower()}" data-goatcounter-title="{name} ({y})">{ICON_DL}Télécharger</a></div>
     </article>""")
         sections.append(f"""
-  <h2 class="section-title">Devoirs surveillés {y}</h2>
+  <h2 class="section-title">Année {y}</h2>
   <div class="cards">{"".join(cards)}
   </div>""")
     cards = []
@@ -376,7 +382,7 @@ def build_devoirs():
   <div class="page-head">
     <div class="eyebrow">1ère année TSI</div>
     <h1>Devoirs</h1>
-    <p class="lead">Les devoirs surveillés de l’année, publiés après chaque épreuve, et des devoirs libres pour s’entraîner à la maison. Le meilleur moyen de se préparer au prochain DS.</p>
+    <p class="lead">Les devoirs surveillés et concours blancs, classés par année scolaire et publiés après chaque épreuve, ainsi que des devoirs libres pour s’entraîner à la maison.</p>
   </div>{"".join(sections)}
 </div>"""
     write("Devoirs.html", page("Devoirs.html", "Devoirs surveillés et devoirs libres — 1ère année TSI | Ismail Sabor",

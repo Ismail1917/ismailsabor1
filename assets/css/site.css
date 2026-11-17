@@ -231,3 +231,5 @@ form.contact-form input:focus, form.contact-form textarea:focus { outline: 2px s
 .site-footer a { color: var(--muted); }
 .section-title { font-size: 1.4rem; margin: 8px 0 18px; }
 .cards + .section-title { margin-top: -40px; }
+.card .top { flex-wrap: wrap; row-gap: 2px; }
+.card .top h3 { white-space: nowrap; }
