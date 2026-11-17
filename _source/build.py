@@ -374,7 +374,7 @@ def build_devoirs():
         <a class="btn primary small" href="{pdf}" data-goatcounter-click="devoir-{code.lower()}" data-goatcounter-title="{esc(titre)}">{ICON_DL}Télécharger</a></div>
     </article>""")
     sections.append(f"""
-  <h2 class="section-title">Devoirs libres</h2>
+  <h2 class="section-title">Année 2024-2025</h2>
   <div class="cards">{"".join(cards)}
   </div>""")
     body = f"""
@@ -382,7 +382,7 @@ def build_devoirs():
   <div class="page-head">
     <div class="eyebrow">1ère année TSI</div>
     <h1>Devoirs</h1>
-    <p class="lead">Les devoirs surveillés et concours blancs, classés par année scolaire et publiés après chaque épreuve, ainsi que des devoirs libres pour s’entraîner à la maison.</p>
+    <p class="lead">Les devoirs surveillés, concours blancs et devoirs libres, classés par année scolaire. Le meilleur moyen de s’entraîner avant une épreuve.</p>
   </div>{"".join(sections)}
 </div>"""
     write("Devoirs.html", page("Devoirs.html", "Devoirs surveillés et devoirs libres — 1ère année TSI | Ismail Sabor",
