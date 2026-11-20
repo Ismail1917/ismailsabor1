@@ -110,6 +110,8 @@ DS = [
      "Caractérisation complexe des triangles équilatéraux, puis un problème ramené à l’étude d’une fonction réelle."),
     ("DS03", "devoirs/DS03_2026-2027.pdf", "2026-2027", datetime.date(2026, 10, 30), "2 h", [3],
      "La fonction de Gudermann, puis les encadrements de Shafer–Fink pour arcsin et arctan."),
+    ("DS04", "devoirs/DS04_2026-2027.pdf", "2026-2027", datetime.date(2026, 11, 20), "2 h", [5, 6],
+     "Sommes télescopiques, produits et primitives, la formule de Leibniz par les intégrales de tan²ⁿ, et une identité sur les nombres harmoniques."),
     ("CB01", "devoirs/CB01_2025-2026.pdf", "2025-2026", datetime.date(2025, 12, 24), "3 h", [5, 6, 7],
      "Somme des carrés par quatre méthodes, exponentielle amortie et problème de Cauchy, équation du second ordre, intégrales de Wallis et de Gauss."),
     ("CB02", "devoirs/CB02_2025-2026.pdf", "2025-2026", datetime.date(2026, 5, 19), "4 h", [17, 18, 19],
