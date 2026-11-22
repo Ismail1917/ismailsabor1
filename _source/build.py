@@ -139,8 +139,17 @@ VERS_EXCELLENCE = [
      "Deux exercices et deux problèmes, dont la convergence de la somme des inverses des carrés vers π²/6.",
      [5, 6, 7]),
     ("VE4", "vers-excellence/VE4.pdf", 3, "Inspiré de Maths 1 — CNC 2026",
-     "Formule de Taylor avec reste intégral et application au calcul de sommes de séries.",
-     [6, 5, 13, 20]),
+     "Formule de Taylor avec reste intégral, liberté de la famille (1, e, e²) sur ℚ et majoration des dérivées successives d’une fonction bornée.",
+     [6, 13, 16, 20]),
+    ("VE5", "vers-excellence/VE5.pdf", 2, "",
+     "Limites de suites de matrices, puis interpolation de Lagrange et moindres carrés.",
+     [13, 18, 19]),
+    ("VE6", "vers-excellence/VE6.pdf", 3, "Inspiré de Maths 1 — CNC 2018",
+     "Polynôme annulateur et projection associée, puis décompositions de M₂(ℂ) en sous-espaces stables par M ↦ [A, M].",
+     [19, 21, 22]),
+    ("VE7", "vers-excellence/VE7.pdf", 3, "Inspiré de Maths 2 — Centrale-Supélec 2026",
+     "Matrices de Pascal, valeurs propres, étude d’une suite, permutations et graphes de permutations.",
+     [5, 18, 23]),
 ]
 
 DIFF_LABEL = {1: "Accessible", 2: "Intermédiaire", 3: "Exigeant"}
