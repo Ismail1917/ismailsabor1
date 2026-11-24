@@ -154,6 +154,9 @@ VERS_EXCELLENCE = [
 
 DIFF_LABEL = {1: "Accessible", 2: "Intermédiaire", 3: "Exigeant"}
 
+# Durée conseillée de chaque sujet Vers l'Excellence
+DUREE_VE = {"VE1": "2 h", "VE2": "2 h", "VE3": "4 h", "VE4": "4 h", "VE5": "3 h", "VE6": "4 h", "VE7": "4 h"}
+
 # --------------------------------------------------------------------------
 # Outils
 # --------------------------------------------------------------------------
@@ -416,7 +419,7 @@ def build_ve():
       {stars(diff)}
       <p>{esc(desc)}</p>
       <div class="tags">{tags}</div>
-      <div class="foot"><small>{p} pages</small>
+      <div class="foot"><small>{p} pages · ⏱ {DUREE_VE[code]}</small>
         <a class="btn primary small" href="{pdf}" data-goatcounter-click="ve-{code.lower()}" data-goatcounter-title="Vers l'Excellence {code}">{ICON_DL}Télécharger</a></div>
     </article>""")
     used = sorted({c for *_, chaps in VERS_EXCELLENCE for c in chaps})
