@@ -155,7 +155,7 @@ VERS_EXCELLENCE = [
 DIFF_LABEL = {1: "Accessible", 2: "Intermédiaire", 3: "Exigeant"}
 
 # Durée conseillée de chaque sujet Vers l'Excellence
-DUREE_VE = {"VE1": "2 h", "VE2": "2 h", "VE3": "4 h", "VE4": "4 h", "VE5": "3 h", "VE6": "4 h", "VE7": "4 h"}
+DUREE_VE = {"VE1": "2 h", "VE2": "2 h", "VE3": "4 h", "VE4": "3 h", "VE5": "3 h", "VE6": "3 h", "VE7": "4 h"}
 
 # --------------------------------------------------------------------------
 # Outils
